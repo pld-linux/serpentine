@@ -1,0 +1,10 @@
+diff -urN serpentine-0.6.2.orig/data/serpentine.desktop.in serpentine-0.6.2/data/serpentine.desktop.in
+--- serpentine-0.6.2.orig/data/serpentine.desktop.in	2005-09-16 09:21:16.799740440 +0200
++++ serpentine-0.6.2/data/serpentine.desktop.in	2005-09-16 09:22:17.432522856 +0200
+@@ -7,5 +7,5 @@
+ Exec=serpentine
+ Icon=gnome-dev-cdrom-audio.png
+ Terminal=False
+-Categories=GNOME;Application;AudioVideo;X-Ximian-Main;X-Red-Hat-Base;
++Categories=GTK;GNOME;AudioVideo;Audio;
+ StartupNotify=true
