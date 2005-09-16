@@ -21,7 +21,10 @@ BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1.7
 BuildRequires:	gettext-devel
 BuildRequires:	intltool
-%{?with_muine:BuildRequires:	mono-csharp}
+%if %{with muine}
+BuildRequires:	mono-csharp
+BuildRequires:	muine
+%endif
 BuildRequires:	pkgconfig
 BuildRequires:	python-pygtk-devel >= 2:2.8.0
 %pyrequires_eq	python-modules
