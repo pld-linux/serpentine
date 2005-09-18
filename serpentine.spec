@@ -8,12 +8,12 @@
 Summary:	CD-Audio recording application
 Summary(pl):	Aplikacja do nagrywania p³yt CD-Audio
 Name:		serpentine
-Version:	0.6.2
+Version:	0.6.3
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.berlios.de/serpentine/%{name}-%{version}.tar.bz2
-# Source0-md5:	51a34c7091040d6da56677303db3308b
+# Source0-md5:	1d0c35e8a298f53c44cbf0d51658eebf
 Patch0:		%{name}-desktop.patch
 URL:		http://s1xr./homelinux.net/projects/serpentine/
 BuildRequires:	GConf2-devel
