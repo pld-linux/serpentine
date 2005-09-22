@@ -58,7 +58,7 @@ Requires:	muine
 Serpentine plugins for Muine.
 
 %description -n muine-plugin-serpentine -l pl
-Wtyczka Serpentine dla Muine
+Wtyczka Serpentine dla Muine.
 
 %prep
 %setup -q
