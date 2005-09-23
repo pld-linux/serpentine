@@ -55,7 +55,7 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	muine
 
 %description -n muine-plugin-serpentine
-Serpentine plugins for Muine.
+Serpentine plugin for Muine.
 
 %description -n muine-plugin-serpentine -l pl
 Wtyczka Serpentine dla Muine.
