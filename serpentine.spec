@@ -8,14 +8,14 @@
 Summary:	CD-Audio recording application
 Summary(pl):	Aplikacja do nagrywania p³yt CD-Audio
 Name:		serpentine
-Version:	0.6.4
+Version:	0.6.91
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.berlios.de/serpentine/%{name}-%{version}.tar.bz2
-# Source0-md5:	98bf62755a4539d47a17fb5c84a183cb
+# Source0-md5:	2d41b5ebef49c03951031c29fccd08e6
 Patch0:		%{name}-desktop.patch
-URL:		http://s1xr./homelinux.net/projects/serpentine/
+URL:		http://s1x.homelinux.net/projects/serpentine/
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1.7
@@ -29,8 +29,9 @@ BuildRequires:	pkgconfig
 BuildRequires:	python-pygtk-devel >= 2:2.8.0
 %pyrequires_eq	python-modules
 %pyrequires_eq	python
+Requires(post,postun):	desktop-file-utils
 Requires:	python-dbus
-Requires:	python-gnome-extras-nautilus-cd-burner >= 2.12.0
+Requires:	python-gnome-desktop-nautilus-cd-burner >= 2.12.0
 Requires:	python-gnome-gconf >= 2.12.0
 Requires:	python-gnome-ui >= 2.12.0
 Requires:	python-gnome-vfs >= 2.12.0
@@ -84,6 +85,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+%update_desktop_database_post
+
+%postun
+%update_desktop_database_postun
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
