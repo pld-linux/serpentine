@@ -30,6 +30,7 @@ BuildRequires:	python-pygtk-devel >= 2:2.8.0
 %pyrequires_eq	python-modules
 %pyrequires_eq	python
 Requires(post,postun):	desktop-file-utils
+Requires:	python-PyXML
 Requires:	python-dbus
 Requires:	python-gnome-desktop-nautilus-cd-burner >= 2.12.0
 Requires:	python-gnome-gconf >= 2.12.0
