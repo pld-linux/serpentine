@@ -1,7 +1,3 @@
-#
-# TODO:
-# - fix plugins system to don't require *.py files
-#
 # Conditional build:
 %bcond_with	muine		# build muine plugin
 #
@@ -15,6 +11,7 @@ Group:		X11/Applications
 Source0:	http://download.berlios.de/serpentine/%{name}-%{version}.tar.bz2
 # Source0-md5:	2d41b5ebef49c03951031c29fccd08e6
 Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-python.patch
 URL:		http://s1x.homelinux.net/projects/serpentine/
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf >= 2.53
@@ -33,6 +30,7 @@ Requires(post,postun):	desktop-file-utils
 Requires:	python-PyXML
 Requires:	python-dbus
 Requires:	python-gnome-desktop-nautilus-cd-burner >= 2.12.0
+Requires:	python-gnome-desktop-totem >= 2.12.0
 Requires:	python-gnome-gconf >= 2.12.0
 Requires:	python-gnome-ui >= 2.12.0
 Requires:	python-gnome-vfs >= 2.12.0
@@ -65,6 +63,7 @@ Wtyczka Serpentine dla Muine.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p0
 
 %build
 %{__aclocal}
@@ -75,12 +74,18 @@ Wtyczka Serpentine dla Muine.
 	%{!?with_muine: --enable-muine=no}
 %{__make}
 
+%{py_comp} serpentine
+%{py_ocomp} serpentine
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+#removed not needed *.py files
+rm -rf $RPM_BUILD_ROOT%{py_sitescriptdir}/%{name}/*.py
+rm -rf $RPM_BUILD_ROOT%{py_sitescriptdir}/%{name}/plugins/*.py
 
 %find_lang %{name}
 

@@ -1,0 +1,26 @@
+--- serpentine/plugins/__init__.py.orig	2006-10-21 18:23:11.000000000 +0200
++++ serpentine/plugins/__init__.py	2006-10-21 18:24:02.000000000 +0200
+@@ -22,20 +22,20 @@
+ import imp, sys, traceback
+ 
+ plugins_dir = path.abspath (path.dirname (__file__))
+-plugins = glob (path.join (plugins_dir, "plug*.py"))
++plugins = glob (path.join (plugins_dir, "plug*.pyo"))
+ plugins_filename = plugins
+ 
+ plugins = {}
+ for filename in plugins_filename:
+ 	# Get file basename and remove the .py extension
+-	plugins[path.basename (filename)[:-3]] = filename
++	plugins[path.basename (filename)[:-4]] = filename
+ 
+ # Now load the modules
+ tmp_plugins = {}
+ for plug in plugins:
+ 	
+ 	try:
+-		module = imp.load_source (plug, plugins[plug])
++		module = imp.load_compiled (plug, plugins[plug])
+ 		
+ 		# Make sure it has a create_plugin method
+ 		if hasattr (module, "create_plugin") and callable (module.create_plugin):
