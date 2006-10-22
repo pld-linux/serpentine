@@ -70,8 +70,7 @@ Wtyczka Serpentine dla Muine.
 %{__autoconf}
 %{__automake}
 %configure \
-	%{?with_muine: --enable-muine=yes} \
-	%{!?with_muine: --enable-muine=no}
+	--enable-muine=%{?with_muine:yes}%{!?with_muine:no}
 %{__make}
 
 %{py_comp} serpentine
@@ -83,9 +82,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-#removed not needed *.py files
-rm -rf $RPM_BUILD_ROOT%{py_sitescriptdir}/%{name}/*.py
-rm -rf $RPM_BUILD_ROOT%{py_sitescriptdir}/%{name}/plugins/*.py
+# remove not needed *.py files
+rm -f $RPM_BUILD_ROOT%{py_sitescriptdir}/%{name}/*.py
+rm -f $RPM_BUILD_ROOT%{py_sitescriptdir}/%{name}/plugins/*.py
 
 %find_lang %{name}
 
