@@ -2,7 +2,7 @@
 %bcond_with	muine		# build muine plugin
 #
 Summary:	CD-Audio recording application
-Summary(pl.UTF-8):   Aplikacja do nagrywania płyt CD-Audio
+Summary(pl.UTF-8):	Aplikacja do nagrywania płyt CD-Audio
 Name:		serpentine
 Version:	0.6.91
 Release:	2
@@ -49,7 +49,7 @@ CD-Audio.
 
 %package -n muine-plugin-serpentine
 Summary:	Serpentine plugins for Muine
-Summary(pl.UTF-8):   Wtyczka Serpentine dla Muine
+Summary(pl.UTF-8):	Wtyczka Serpentine dla Muine
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	muine
