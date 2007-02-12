@@ -2,7 +2,7 @@
 %bcond_with	muine		# build muine plugin
 #
 Summary:	CD-Audio recording application
-Summary(pl):	Aplikacja do nagrywania p³yt CD-Audio
+Summary(pl.UTF-8):   Aplikacja do nagrywania pÅ‚yt CD-Audio
 Name:		serpentine
 Version:	0.6.91
 Release:	2
@@ -43,13 +43,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Serpentine is a simple to use and very powerful CD-Audio recording
 application.
 
-%description -l pl
-Serpentine to prosta w u¿yciu i potê¿na aplikacja do nagrywania p³yt
+%description -l pl.UTF-8
+Serpentine to prosta w uÅ¼yciu i potÄ™Å¼na aplikacja do nagrywania pÅ‚yt
 CD-Audio.
 
 %package -n muine-plugin-serpentine
 Summary:	Serpentine plugins for Muine
-Summary(pl):	Wtyczka Serpentine dla Muine
+Summary(pl.UTF-8):   Wtyczka Serpentine dla Muine
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	muine
@@ -57,7 +57,7 @@ Requires:	muine
 %description -n muine-plugin-serpentine
 Serpentine plugin for Muine.
 
-%description -n muine-plugin-serpentine -l pl
+%description -n muine-plugin-serpentine -l pl.UTF-8
 Wtyczka Serpentine dla Muine.
 
 %prep
