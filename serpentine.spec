@@ -4,14 +4,13 @@
 Summary:	CD-Audio recording application
 Summary(pl.UTF-8):	Aplikacja do nagrywania płyt CD-Audio
 Name:		serpentine
-Version:	0.6.91
-Release:	2
+Version:	0.7
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.berlios.de/serpentine/%{name}-%{version}.tar.bz2
-# Source0-md5:	2d41b5ebef49c03951031c29fccd08e6
-Patch0:		%{name}-desktop.patch
-Patch1:		%{name}-python.patch
+# Source0-md5:	6e841e6c11796841656dba2678a558f0
+Patch0:		%{name}-python.patch
 URL:		http://s1x.homelinux.net/projects/serpentine/
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf >= 2.53
@@ -24,6 +23,7 @@ BuildRequires:	muine
 %endif
 BuildRequires:	pkgconfig
 BuildRequires:	python-pygtk-devel >= 2:2.8.0
+BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 %pyrequires_eq	python
 Requires(post,postun):	desktop-file-utils
@@ -63,7 +63,6 @@ Wtyczka Serpentine dla Muine.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p0
 
 %build
 %{__aclocal}
