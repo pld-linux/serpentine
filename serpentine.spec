@@ -1,3 +1,4 @@
+#
 # Conditional build:
 %bcond_with	muine		# build muine plugin
 #
@@ -5,7 +6,7 @@ Summary:	CD-Audio recording application
 Summary(pl.UTF-8):	Aplikacja do nagrywania płyt CD-Audio
 Name:		serpentine
 Version:	0.9
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.berlios.de/serpentine/%{name}-%{version}.tar.bz2
@@ -65,6 +66,7 @@ Wtyczka Serpentine dla Muine.
 %patch0 -p1
 
 %build
+%{__intltoolize}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
