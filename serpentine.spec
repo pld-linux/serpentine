@@ -6,7 +6,7 @@ Summary:	CD-Audio recording application
 Summary(pl.UTF-8):	Aplikacja do nagrywania płyt CD-Audio
 Name:		serpentine
 Version:	0.9
-Release:	3
+Release:	4
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.berlios.de/serpentine/%{name}-%{version}.tar.bz2
