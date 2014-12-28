@@ -16,7 +16,7 @@ URL:		http://s1x.homelinux.net/projects/serpentine/
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1.7
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	intltool
 %if %{with muine}
 BuildRequires:	mono-csharp
